@@ -32,14 +32,14 @@ exports = module.exports = window.app = internals.App = {
         settingsStore: SettingsStore
     },
 
-    start: function (host, port, opts) {
+    start: function (protocol, host, port, opts) {
 
         opts = _.extend(this.defaults, opts);
 
         var messageParser = opts.messageParser;
         var settingsStore = opts.settingsStore;
 
-        var ws = new WebSocket('ws://' + host + ':' + port);
+        var ws = new WebSocket(protocol + '://' + host + ':' + port);
         var webSocketManager = opts.webSocketManagerClass.create(ws);
 
         var appView = new opts.appViewClass({

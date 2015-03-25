@@ -14,8 +14,9 @@
         <script language="javascript">
             var host = '{{ host }}';
             var port = {{ port }};
+            var protocol = '{{ protocol }}';
 
-            window.app.start(host, port);
+            window.app.start(protocol, host, port);
         </script>
     </body>
 </html>
